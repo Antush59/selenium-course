@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,15 +13,9 @@ public class SmokeTest {
 
     private WebDriver driver;
 
-//    @BeforeEach
-//    void setUp() {
-//        //создаем браузер. Selenium Manager сам найдет/скачает chromedriver.
-//        driver = new ChromeDriver();
-//    }
-
     @BeforeEach
     void setUp() {
-        //создаем браузер. Selenium Manager сам найдет/скачает chromedriver.
+        //создаем браузер. Selenium Manager сам найдет/скачает edgeDriver.
         driver = new EdgeDriver();
     }
 
