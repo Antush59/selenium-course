@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>XPath Demo</title>
+</head>
+<body>
+<header>
+    <h1>Магазин</h1>
+    <a href="/cart" class="cart">Корзина</a>
+</header>
+
+<main>
+    <div class="product" data-id="101">
+        <h2>Ноутбук</h2>
+        <p class="price">75000</p>
+        <button class="btn">Add to cart</button>
+    </div>
+
+    <div class="product" data-id="102">
+        <h2>Мышь</h2>
+        <p class="price">1500</p>
+        <button class="btn">Add to cart</button>
+    </div>
+
+    <div class="product sold-out" data-id="103">
+        <h2>Клавиатура</h2>
+        <p class="price">3000</p>
+        <button class="btn" disabled>Add to cart</button>
+    </div>
+
+    <form>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com">
+
+        <label for="phone">Телефон</label>
+        <input id="phone" type="tel">
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div class="messages">
+        <p class="msg">Заказ принят</p>
+        <p class="msg error">Ошибка оплаты</p>
+    </div>
+</main>
+</body>
+</html>
