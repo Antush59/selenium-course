@@ -89,7 +89,7 @@ public class LoginTest {
     }
 
     @Test
-    void checkErrorMessageIfPasswordIsNotProvider() {
+    void checkErrorMessageIfPasswordIsNotProvided() {
         login("standard_user", "");
 
         WebElement error = waitVisible(By.cssSelector("[data-test='error']"));
@@ -104,9 +104,10 @@ public class LoginTest {
         waitVisible(By.cssSelector(".inventory_item"));
 
         driver.findElement(By.cssSelector("[data-test='add-to-cart-sauce-labs-backpack']")).click();
+        WebElement addShows = waitVisible(By.cssSelector("[data-test='shopping-cart-badge']"));
 
         assertTrue(driver.findElement(By.cssSelector("[data-test='shopping-cart-link']")).isDisplayed());
-        assertTrue(driver.findElement(By.cssSelector("[data-test='shopping-cart-badge']")).isDisplayed());
+        assertTrue(addShows.isDisplayed());
 
         WebElement badge = waitVisible(By.cssSelector("[data-test='shopping-cart-badge']"));
         assertEquals("1", badge.getText());
@@ -116,9 +117,9 @@ public class LoginTest {
     @Test
     void checkLockedOutUser() {
         login("locked_out_user", "secret_sauce");
-        String errorText = driver.findElement(By.cssSelector("[data-test='error']")).getText();
+        WebElement webElement = waitVisible(By.cssSelector("[data-test='error']"));
 
-        assertTrue(errorText.contains("locked out"));
+        assertTrue(webElement.getText().contains("locked out"));
         assertEquals("https://www.saucedemo.com/", driver.getCurrentUrl());
     }
 }

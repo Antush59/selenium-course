@@ -55,8 +55,7 @@ public class LocatorsBooksTest {
     void findPriceFirstBook() {
         driver.get("https://books.toscrape.com/");
 
-        WebElement priceBook = driver.findElement(By.cssSelector(".product_pod.price_color"));
-        String priceText = priceBook.getText();
+        String priceText = driver.findElement(By.xpath("//p[@class='price_color']")).getText();
 
         System.out.println("Цена первой книги: " + priceText);
 
